@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-poppins: "Poppins", sans-serif;
+  /* Changing the default fontFamily to Poppins */
+  --font-sans: "Poppins", sans-serif;
 
   /* --color-primary: #ed6842; */
 
