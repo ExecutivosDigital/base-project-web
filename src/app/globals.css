@@ -27,3 +27,7 @@
     }
   } */
 }
+
+.swiper-slide {
+  max-width: fit-content;
+}
