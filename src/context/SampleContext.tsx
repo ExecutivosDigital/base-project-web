@@ -4,6 +4,7 @@ import { createContext, useContext } from "react";
 import { useCookies } from "next-client-cookies";
 
 interface SampleContextProps {
+  token: string | undefined;
   // states that will be exported
 }
 
@@ -16,13 +17,16 @@ interface ProviderProps {
 export const SampleContextProvider = ({ children }: ProviderProps) => {
   const cookies = useCookies();
 
+  const token = cookies.get("token");
+
+  console.log("cookies: ", cookies);
+
   return (
     <SampleContext.Provider
-      value={
-        {
-          // states that will be exported
-        }
-      }
+      value={{
+        token,
+        // states that will be exported
+      }}
     >
       {children}
     </SampleContext.Provider>
