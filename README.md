@@ -73,22 +73,22 @@ yarn dev
 
 ```
 .
-├── src/                      # Código-fonte principal
-│   ├── app/                  # App Router do Next 15
-│   │   ├── page.tsx          # Página principal
-│   │   ├── globals.css       # Estilizações e configurações do TailwindCSS
-│   │   ├── layout.tsx        # Layout global
-│   │   └── dashboard/        # Página "Dashboard"
-│   │       ├── page.tsx      # Tela do Dashboard
-│   │       ├── layout.tsx    # Layout da tela do Dashboard
-│   │       └── components/   # Componentes específicos da tela
+├── src/                        # Código-fonte principal
+│   ├── app/                    # App Router do Next 15
+│   │   ├── page.tsx            # Página principal
+│   │   ├── globals.css         # Estilizações e configurações do TailwindCSS
+│   │   ├── layout.tsx          # Layout global
+│   │   └── dashboard/          # Página "Dashboard"
+│   │       ├── page.tsx        # Tela do Dashboard
+│   │       ├── layout.tsx      # Layout da tela do Dashboard
+│   │       └── components/     # Componentes específicos da tela
 │   │           └── example.tsx # Exemplo de componente da tela
-│   ├── components/           # Componentes reutilizáveis
-│   ├── lib/                  # Configurações, helpers e utilitários
-│   └── context/              # Contextos globais (auth, tema, etc.)
-├── public/                   # Arquivos estáticos (imagens, favicon, etc.)
-├── .env.local                # Variáveis de ambiente locais
-└── tsconfig.json             # Configuração do TypeScript
+│   ├── components/             # Componentes reutilizáveis
+│   ├── lib/                    # Configurações, helpers e utilitários
+│   └── context/                # Contextos globais (auth, tema, etc.)
+├── public/                     # Arquivos estáticos (imagens, favicon, etc.)
+├── .env.local                  # Variáveis de ambiente locais
+└── tsconfig.json               # Configuração do TypeScript
 ```
 
 ---
