@@ -71,23 +71,25 @@ yarn dev
 
 ## 📁 Estrutura de Pastas
 
+```
 .
-├── src/ # Src
-│ ├── app/ # App Router do Next 15
-│ │ ├── page.tsx # Página principal
-│ │ ├── globals.css # Estilizações e configurações de TailwindCSS
-│ │ ├── layout.tsx # Layout global
-│ │ └── dashboard/ # Página
-│ │ ├── page.tsx # Tela
-│ │ ├── layout.tsx # Layout da Tela
-│ │ └── components/ # Componentes da Tela
-│ │ └── example.tsx # Componente
-│ ├── components/ # Componentes reutilizáveis
-│ ├── lib/ # Configurações e utils
-│ └── context/ # Integração com APIs
-├── public/ # Arquivos estáticos
-├── .env.local # Variáveis de ambiente
-└── tsconfig.json # Configurações TypeScript
+├── src/                      # Código-fonte principal
+│   ├── app/                  # App Router do Next 15
+│   │   ├── page.tsx          # Página principal
+│   │   ├── globals.css       # Estilizações e configurações do TailwindCSS
+│   │   ├── layout.tsx        # Layout global
+│   │   └── dashboard/        # Página "Dashboard"
+│   │       ├── page.tsx      # Tela do Dashboard
+│   │       ├── layout.tsx    # Layout da tela do Dashboard
+│   │       └── components/   # Componentes específicos da tela
+│   │           └── example.tsx # Exemplo de componente da tela
+│   ├── components/           # Componentes reutilizáveis
+│   ├── lib/                  # Configurações, helpers e utilitários
+│   └── context/              # Contextos globais (auth, tema, etc.)
+├── public/                   # Arquivos estáticos (imagens, favicon, etc.)
+├── .env.local                # Variáveis de ambiente locais
+└── tsconfig.json             # Configuração do TypeScript
+```
 
 ---
 
@@ -95,9 +97,7 @@ yarn dev
 
 ```
 /login → Tela de autenticação
-```
 
-```
 / → Home
 ```
 
