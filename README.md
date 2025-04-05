@@ -51,7 +51,7 @@ yarn dev
 
 1. Rodar projeto localmente:
 
-   ```bash
+   ```
    yarn dev
    ```
 
@@ -66,6 +66,8 @@ yarn dev
    ```
    yarn lint
    ```
+
+   ***
 
 ## 📁 Estrutura de Pastas
 
@@ -87,13 +89,28 @@ yarn dev
 ├── .env.local # Variáveis de ambiente
 └── tsconfig.json # Configurações TypeScript
 
+---
+
 ## 🧭 Rotas e Navegação
 
+```
 /login → Tela de autenticação
+```
 
+```
 / → Home
+```
+
+---
 
 ## 🔐 Variáveis de Ambiente
 
+```
 API_URL=""
+```
+
+```
 USER_TOKEN=""
+```
+
+---
