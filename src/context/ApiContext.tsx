@@ -1,29 +1,30 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import axios from "axios";
 import { useCookies } from "next-client-cookies";
 import { createContext, useContext } from "react";
 
-const baseURL = process.env.API_URL;
+const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 interface ApiContextProps {
   PostAPI: (
     url: string,
     data: unknown,
     auth: boolean,
-  ) => Promise<{ status: number; body: unknown }>;
+  ) => Promise<{ status: number; body: any }>;
   GetAPI: (
     url: string,
     auth: boolean,
-  ) => Promise<{ status: number; body: unknown }>;
+  ) => Promise<{ status: number; body: any }>;
   PutAPI: (
     url: string,
     data: unknown,
     auth: boolean,
-  ) => Promise<{ status: number; body: unknown }>;
+  ) => Promise<{ status: number; body: any }>;
   DeleteAPI: (
     url: string,
     auth: boolean,
-  ) => Promise<{ status: number; body: unknown }>;
+  ) => Promise<{ status: number; body: any }>;
 }
 
 const ApiContext = createContext<ApiContextProps | undefined>(undefined);
@@ -35,7 +36,7 @@ interface ProviderProps {
 export const ApiContextProvider = ({ children }: ProviderProps) => {
   const cookies = useCookies();
 
-  const token = cookies.get("token");
+  const token = cookies.get(process.env.NEXT_PUBLIC_USER_TOKEN as string);
 
   const api = axios.create({
     baseURL,

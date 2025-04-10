@@ -1,3 +1,5 @@
+"use server";
+
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 export const config = {
@@ -6,7 +8,7 @@ export const config = {
 
 export async function middleware(req: NextRequest) {
   const loginVerifyAPI = async (token: string) => {
-    const baseURL = process.env.API_URL;
+    const baseURL = process.env.NEXT_PUBLIC_API_URL;
     if (!token) {
       return {
         status: 400,
@@ -41,9 +43,10 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
 
   const cookieStore = await cookies();
-  const Token = process.env.USER_TOKEN;
+  const Token = process.env.NEXT_PUBLIC_USER_TOKEN;
   if (!Token) return NextResponse.redirect(new URL("/login", req.url));
   const token = cookieStore.get(Token);
+
   if (!token) return NextResponse.redirect(new URL("/login", req.url));
 
   const connect = await loginVerifyAPI(token.value);
@@ -51,8 +54,10 @@ export async function middleware(req: NextRequest) {
   if (connect.status !== 200) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
+
   if (connect.status === 200) {
-    cookieStore.set(Token, connect.body.token);
+    const res = NextResponse.next();
+    res.cookies.set(Token, connect.body.accessToken);
   }
 
   return NextResponse.next();
