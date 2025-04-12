@@ -4,20 +4,17 @@ import { Message } from "./ApiTypes";
 
 const API_URL = "https://api.openai.com/v1";
 
-const API_KEY =
-  "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";
-
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${API_KEY}`,
+    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
     "OpenAI-Beta": "assistants=v2",
   },
 });
 
 const openAiClient = new OpenAI({
-  apiKey: API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,
 });
 
