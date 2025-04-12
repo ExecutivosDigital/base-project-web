@@ -17,6 +17,7 @@ const apiClient: AxiosInstance = axios.create({
 
 const openAiClient = new OpenAI({
   apiKey: API_KEY,
+  dangerouslyAllowBrowser: true,
 });
 
 export const createMessage = async (
